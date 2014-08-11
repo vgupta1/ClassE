@@ -1,0 +1,26 @@
+Room,Capacity,Seating Style,Video Projector,Document Camera,Overhead Projector,VCR,DVD/CD,MIT Cable,Lecture Capture,Assistive Listening Devices,Data Port at Each Seat,Microphone in Room,Video Conferencing,Phone Jack
+E51-057,66,Tier,Y,,Y,Y,,Y,,,,Y,,Y
+E51-061,24,Seminar,,,,,,,,,,,,Y
+E51-063,35,Flat,,,,,,Y,,,,,,Y
+E51-085,50,Flat,,,,,,Y,,,,,,Y
+E51-145,67,Tier,Y,Y,Y,,Y,Y,Y,Y,,,,Y
+E51-149,67,Tier,Y,Y,Y,,Y,Y,Y,Y,,Y,,Y
+E51-151,54,Tier,Y,Y,Y,,Y,Y,Y,Y,,Y,,Y
+E51-315,86,Tier,Y,Y,,,Y,Y,Y,,Y,Y,Y,
+E51-325,86,Tier,Y,Y,,,Y,Y,Y,,Y,Y,Y,
+E51-335,76,Tier,Y,Y,,,Y,Y,Y,,Y,Y,Y,
+E51-345,128,Tier,Y,Y,,,Y,Y,Y,,Y,Y,Y,
+E51-361,40,Flat,,,,,,,,,,,,Y
+E51-372,50,Tier,Y,,Y,Y,,Y,,,,Y,,Y
+E51-376,54,Tier,Y,,Y,Y,,Y,,,,Y,,Y
+E51-390,20,Seminar,,,,,,Y,,,,,,Y
+E51-385,18,Seminar,,,,,,Y,,,,,,Y
+E51-393,14,Seminar,,,,,,,,,,,,Y
+E51-395,70,Tier,Y,,Y,,,Y,,,Y,Y,,Y
+E52-175,59,Tier,Y,,Y,,,,,,,,,
+E62-221,36,Flat,Y,Y,,,Y,Y,Y,,Y,Y,Y,
+E62-223,80,Tier,Y,Y,,,Y,Y,Y,,Y,Y,Y,
+E62-233,108,Flat,Y,Y,,,Y,Y,Y,,Y,Y,Y,
+E62-250,57,Tier,Y,Y,,,Y,Y,Y,,Y,Y,Y,
+E62-262,85,Tier,Y,Y,,,Y,Y,Y,,Y,Y,Y,
+E62-276,105,Tier,Y,Y,,,Y,Y,Y,,Y,Y,Y,
