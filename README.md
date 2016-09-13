@@ -11,12 +11,12 @@ The integer optimization component leverages either the [CPLEX](https://www-01.i
 ClassE was custom designed for SES, and, hence, does not fully support general timetabling.  All code is available open-source under the MIT License, without any technical support.  Indeed, many of the libraries originally underlying ClassE (e.g., wxPython) have been deprecated since its creation.  Organizations looking to extend its functionality might want to reimplement these portions or reach out to me directly.  
 
 Requirements
-=============
+======
 ClassE requires wxPython, wx, and CPLEX or Gurobi. 
 
 
 Overview of Functionality
-=============
+======
 ClassE can be invoked at terminal.
 ```
 python classE
@@ -32,17 +32,26 @@ After loading the data, the user can set appropriate weights on each of several 
   * Excess Capacity describes the importance of assigning classes to rooms that fit their enrollment, but are overly large.  
   * Congestion describes the importance of reducing the number of classes that are scheduled simultaneously.
   * Dept. Fairness describes the importance of ensuring that a comparable number of instructors in each department receive their top preferences for time-slots. 
-  * rBack to Back describes the importance of scheduling requested classes consecutively. 
+  * Back to Back describes the importance of scheduling requested classes consecutively. 
 
-After setting these weights and optimizing, the user can compute on-the-fly analytics for the computed time-table via the accompanying visualizations.  For example:
+<img src="https://github.com/vgupta1/ClassE/blob/master/imgs/classEDashboard.png" width="700">
+
+After setting these weights and optimizing, the user can compute on-the-fly analytics for the computed time-table via the accompanying visualizations.  For example, the fairness metrics ensure no department is unfairly penalized in the allocation.
+
+<img src="https://github.com/vgupta1/ClassE/blob/master/imgs/classEFairness.png" width="700">
+
+Similarly, other metrics, such as excess capacity, help ensure that the schedule meets internal targets for room-use efficiency.
+
+<img src="https://github.com/vgupta1/ClassE/blob/master/imgs/classEExcessCapacity.png" width="700">
+
+Finally, a heat map gives a birds-eye-view of congestion and usage:
+
+<img src="https://github.com/vgupta1/ClassE/blob/master/imgs/classEHeatMap.png" width="700">
 
 
+Once a suitable time-table is found, the user can save the results to a .csv file using the File Menu.  
 
-
-3. Once a suitable time-table is found, the user can save the results to a .csv file using the File Menu.  
-
-
-File Structure
+Technical Details
 ======
 
 DataFiles
