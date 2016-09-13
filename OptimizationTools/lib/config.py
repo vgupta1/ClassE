@@ -1,4 +1,7 @@
-"""Config file for the SES Optimization"""
+"""Config file for the SES Optimization
+
+Contains constants particular to the SES
+"""
 from sesClasses import TimeSlot
 
 #Heat Maps for requests
@@ -8,7 +11,6 @@ __time_grid__ = ["8:30 AM", "9:00 AM", "9:30 AM", "10:00 AM", "10:30 AM",
             "4:00 PM", "4:30 PM", "5:00 PM", "5:30 PM", "6:00 PM", 
             "6:30 PM", "7:00 PM", "7:30 PM", "8:00 PM"]
 
-#VG Think about whether these should be explicit or in a class...
 class Options:
     def __init__(self, file_path=None):
         """Initialize the config details"""
@@ -30,7 +32,6 @@ class Options:
 
         #Penalty for violating soft-constraint
         self.SOFT_CNST_PENALTY = 1e3
-        
-        
+         
         #solver parameters
         self.REL_GAP = 1e-2
