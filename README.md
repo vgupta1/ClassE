@@ -10,13 +10,12 @@ ClassE uses binary optimization to identify an optimal timetable, and supports o
 The integer optimization component leverages either the [CPLEX](https://www-01.ibm.com/software/commerce/optimization/cplex-optimizer/) or [Gurobi](http://www.gurobi.com/) (not included in this distribution).  Both solvers are available via academic or commercial licenses.  
 ClassE was custom designed for SES, and, hence, does not fully support general timetabling.  All code is available open-source under the MIT License, without any technical support.  Indeed, many of the libraries originally underlying ClassE (e.g., wxPython) have been deprecated since its creation.  Organizations looking to extend its functionality might want to reimplement these portions or reach out to me directly.  
 
-Requirements
-=============
+##Requirements
+
 ClassE requires wxPython, wx, and CPLEX or Gurobi. 
 
 
-Overview of Functionality
-=============
+##Overview of Functionality
 ClassE can be invoked at terminal.
 ```
 python classE
@@ -32,41 +31,46 @@ After loading the data, the user can set appropriate weights on each of several 
   * Excess Capacity describes the importance of assigning classes to rooms that fit their enrollment, but are overly large.  
   * Congestion describes the importance of reducing the number of classes that are scheduled simultaneously.
   * Dept. Fairness describes the importance of ensuring that a comparable number of instructors in each department receive their top preferences for time-slots. 
-  * rBack to Back describes the importance of scheduling requested classes consecutively. 
+  * Back to Back describes the importance of scheduling requested classes consecutively. 
 
-After setting these weights and optimizing, the user can compute on-the-fly analytics for the computed time-table via the accompanying visualizations.  For example:
+<img src="https://github.com/vgupta1/ClassE/blob/master/imgs/classEDashboard.png" width="700">
+
+After setting these weights and optimizing, the user can compute on-the-fly analytics for the computed time-table via the accompanying visualizations.  For example, the fairness metrics ensure no department is unfairly penalized in the allocation.
+
+<img src="https://github.com/vgupta1/ClassE/blob/master/imgs/classEFairness.png" width="700">
+
+Similarly, other metrics, such as excess capacity, help ensure that the schedule meets internal targets for room-use efficiency.
+
+<img src="https://github.com/vgupta1/ClassE/blob/master/imgs/classEExcessCapacity.png" width="700">
+
+Finally, a heat map gives a birds-eye-view of congestion and usage:
+
+<img src="https://github.com/vgupta1/ClassE/blob/master/imgs/classEHeatMap.png" width="700">
 
 
+Once a suitable time-table is found, the user can save the results to a .csv file using the File Menu.  
+
+##Technical Details
 
 
-3. Once a suitable time-table is found, the user can save the results to a .csv file using the File Menu.  
+###DataFiles
 
-
-File Structure
-======
-
-DataFiles
-------
 All data defining the optimization is found in this folder in .csv files including the courses that need to be allocated (courseRequests.csv), the available Room Inventory (roomInventory.csv), any sets of classes that cannot be scheduled simultaneously (NoConflict.csv), and any classes that should be scheduled consecutively (back2back.csv) if possible.  These files must be formatted correctly. The.xls spreadsheet "CourseRequests_v5.xls" contains macros that can be used to create such files.  
 
 The file "readData.py" contains all functions to parse these data files.  
 
-Optimization Problem
-------
+###Optimization Problem
 The core binary optimization problem that ClassE solves is created either in "optimizer_cplex.py" or "optimzier_gurobi.py" depending on the system.  
 
 
-GUI
-------
+###GUI
 The file ClassE.py contains the main GUI written in wxPython.  The GUI is the preferred means to run ClassE, in particular to take advantage of its visualizations.  Alternatively, the file "mainSES.py" illustrates how to call the underlying optimization directly in Python, for more programmatic development.  
 
 
-Other
-------
+###Other
 Remaining files store either helper functions or test files.  
 
 
-Licensing
-======
+##Licensing
 ClassE is available under the MIT License.  
 Copyright (c) 2014 Vishal Gupta 
