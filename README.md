@@ -10,12 +10,12 @@ ClassE uses binary optimization to identify an optimal timetable, and supports o
 The integer optimization component leverages either the [CPLEX](https://www-01.ibm.com/software/commerce/optimization/cplex-optimizer/) or [Gurobi](http://www.gurobi.com/) (not included in this distribution).  Both solvers are available via academic or commercial licenses.  
 ClassE was custom designed for SES, and, hence, does not fully support general timetabling.  All code is available open-source under the MIT License, without any technical support.  Indeed, many of the libraries originally underlying ClassE (e.g., wxPython) have been deprecated since its creation.  Organizations looking to extend its functionality might want to reimplement these portions or reach out to me directly.  
 
-##Requirements
+## Requirements
 
 ClassE requires wxPython, wx, and CPLEX or Gurobi. 
 
 
-##Overview of Functionality
+## Overview of Functionality
 ClassE can be invoked at terminal.
 ```
 python classE
@@ -50,27 +50,27 @@ Finally, a heat map gives a birds-eye-view of congestion and usage:
 
 Once a suitable time-table is found, the user can save the results to a .csv file using the File Menu.  
 
-##Technical Details
+## Technical Details
 
 
-###DataFiles
+### DataFiles
 
 All data defining the optimization is found in this folder in .csv files including the courses that need to be allocated (courseRequests.csv), the available Room Inventory (roomInventory.csv), any sets of classes that cannot be scheduled simultaneously (NoConflict.csv), and any classes that should be scheduled consecutively (back2back.csv) if possible.  These files must be formatted correctly. The.xls spreadsheet "CourseRequests_v5.xls" contains macros that can be used to create such files.  
 
 The file "readData.py" contains all functions to parse these data files.  
 
-###Optimization Problem
+### Optimization Problem
 The core binary optimization problem that ClassE solves is created either in "optimizer_cplex.py" or "optimzier_gurobi.py" depending on the system.  
 
 
-###GUI
+### GUI
 The file ClassE.py contains the main GUI written in wxPython.  The GUI is the preferred means to run ClassE, in particular to take advantage of its visualizations.  Alternatively, the file "mainSES.py" illustrates how to call the underlying optimization directly in Python, for more programmatic development.  
 
 
-###Other
+### Other
 Remaining files store either helper functions or test files.  
 
 
-##Licensing
+## Licensing
 ClassE is available under the MIT License.  
 Copyright (c) 2014 Vishal Gupta 
