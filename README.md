@@ -10,6 +10,12 @@ ClassE uses binary optimization to identify an optimal timetable, and supports o
 The integer optimization component leverages either the [CPLEX](https://www-01.ibm.com/software/commerce/optimization/cplex-optimizer/) or [Gurobi](http://www.gurobi.com/) (not included in this distribution).  Both solvers are available via academic or commercial licenses.  
 ClassE was custom designed for SES, and, hence, does not fully support general timetabling.  All code is available open-source under the MIT License, without any technical support.  Indeed, many of the libraries originally underlying ClassE (e.g., wxPython) have been deprecated since its creation.  Organizations looking to extend its functionality might want to reimplement these portions or reach out to me directly.  
 
+## Licensing
+ClassE is available under the MIT License.  
+Copyright (c) 2014 Vishal Gupta 
+
+Also, if you use any portion of the software, I'd appreciate a quick note telling me the application.  As an academic, I like hearing about when my work has impact.  
+
 ## Requirements
 
 ClassE requires wxPython, wx, and CPLEX or Gurobi. 
@@ -69,8 +75,3 @@ The file ClassE.py contains the main GUI written in wxPython.  The GUI is the pr
 
 ### Other
 Remaining files store either helper functions or test files.  
-
-
-## Licensing
-ClassE is available under the MIT License.  
-Copyright (c) 2014 Vishal Gupta 
